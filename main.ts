@@ -9,7 +9,7 @@ enum PingUnit {
  * Sonar and ping utilities
  */
 //% color="#2c3e50" weight=10
-namespace sonar {
+namespace tsal {
     /**
      * Send a ping and get the echo time (in microseconds) as a result
      * @param trig tigger pin
