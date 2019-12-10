@@ -1,6 +1,6 @@
 {
-    "name": "pxt-sonar",
-    "version": "0.0.5",
+    "name": "pxt-tsal",
+    "version": "0.0.6",
     "description": "Tevfik Serdar Anadolu Lisesi Sonar Sensor(ping) such as the HC-SR04",
     "license": "MIT",
     "dependencies": {
