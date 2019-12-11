@@ -19,24 +19,24 @@ namespace tsal {
      */
     //% blockId=sonar_ping block="ping trig %trig|echo %echo|unit %unit"
     export function ping(trig: DigitalPin, echo: DigitalPin, unit: PingUnit, maxCmDistance = 500): number {
-        let d
+        let dd
         pins.digitalWritePin(trig, 0);
         if (pins.digitalReadPin(echo) == 0) {
             pins.digitalWritePin(trig, 1);
             pins.digitalWritePin(trig, 0);
-            d = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
+            dd = pins.pulseIn(echo, PulseValue.High, maxCmDistance * 58);
         } else {
             pins.digitalWritePin(trig, 0);
             pins.digitalWritePin(trig, 1);
-            d = pins.pulseIn(echo, PulseValue.Low, maxCmDistance * 58);
+            dd = pins.pulseIn(echo, PulseValue.Low, maxCmDistance * 58);
         }
-        let x = d / 39;
-        if (x <= 0 || x > 500) {
+        let xx = dd / 39;
+        if (xx <= 0 || xx > 500) {
             return 0;
         }
         switch (unit) {
-            case PingUnit.Centimeters: return Math.round(x);
-            default: return Math.idiv(d, 2.54);
+            case PingUnit.Centimeters: return Math.round(xx);
+            default: return Math.idiv(dd, 2.54);
         }
 
     }
